@@ -176,23 +176,25 @@ if (rankedClaims.length === 0) {
 // old claims*votes flat — far cheaper since most claims die at the screen.
 phase("Verify")
 
-const screened = (await parallel(rankedClaims.map(claim => () =>
+const screenedRaw = await parallel(rankedClaims.map(claim => () =>
   agent(VERIFY_PROMPT(claim, 0, VOTES_PER_CLAIM), { label: "screen:" + claim.claim.slice(0, 36), phase: "Verify", schema: VERDICT_SCHEMA })
     .then(verdict => ({ claim, screen: verdict }))
-)).then(rs => rs.filter(r => r && r.screen))   // drop null/abstained screens
+))
+const screened = screenedRaw.filter(r => r && r.screen)   // drop null/abstained screens
 
 const screenKilled = screened.filter(r => r.screen.refuted)
 const screenPassed = screened.filter(r => !r.screen.refuted)
 log("Screen: " + screenPassed.length + "/" + screened.length + " passed (1-vote); " + screenKilled.length + " killed cheaply")
 
 // Escalate only screen-passers to a full majority (skip if votes==1)
-const escalated = (await parallel(screenPassed.map(({ claim, screen }) => () => {
+const escalatedRaw = await parallel(screenPassed.map(({ claim, screen }) => () => {
   const extra = VOTES_PER_CLAIM - 1
   if (extra <= 0) return Promise.resolve({ claim, verdicts: [screen] })
   return parallel(Array.from({ length: extra }, (_, i) => () =>
     agent(VERIFY_PROMPT(claim, i + 1, VOTES_PER_CLAIM), { label: "v" + (i + 1) + ":" + claim.claim.slice(0, 36), phase: "Verify", schema: VERDICT_SCHEMA })
   )).then(more => ({ claim, verdicts: [screen, ...more.filter(Boolean)] }))
-}))).filter(Boolean)
+}))
+const escalated = escalatedRaw.filter(Boolean)
 
 const voted = [
   // screen-killed claims: record as a finished 0-1 verdict (refuted)

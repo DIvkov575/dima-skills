@@ -9,6 +9,20 @@
   },
   "plugins": [
     {
+      "name": "swear-filter",
+      "source": {
+        "source": "github",
+        "repo": "DIvkov575/claude-mouthsoap"
+      },
+      "description": "Deletes swearing from your prompts before Claude sees them, via a UserPromptSubmit hook",
+      "version": "0.1.0",
+      "author": {
+        "name": "DIvkov575"
+      },
+      "repository": "https://github.com/DIvkov575/claude-mouthsoap",
+      "keywords": ["profanity", "filter", "hook", "prompt", "moderation"]
+    },
+    {
       "name": "git-ship",
       "source": "./plugins/git-ship",
       "description": "Commit staged changes with a generated message and push to the current branch",
@@ -18,17 +32,6 @@
       },
       "repository": "https://github.com/DIvkov575/skills",
       "keywords": ["git", "commit", "push"]
-    },
-    {
-      "name": "converge",
-      "source": "./plugins/converge",
-      "description": "Autonomous plan, TDD implement, review, fix loop until clean",
-      "version": "1.0.0",
-      "author": {
-        "name": "DIvkov575"
-      },
-      "repository": "https://github.com/DIvkov575/skills",
-      "keywords": ["tdd", "review", "autonomous"]
     },
     {
       "name": "handoff",
@@ -106,17 +109,6 @@
       },
       "repository": "https://github.com/DIvkov575/dima-skills",
       "keywords": ["humanize", "gptisms", "rewrite", "voice", "tone", "writing"]
-    },
-    {
-      "name": "status",
-      "source": "./plugins/status",
-      "description": "Read session notes, today's work log, and task list to produce a concise status report",
-      "version": "1.0.0",
-      "author": {
-        "name": "DIvkov575"
-      },
-      "repository": "https://github.com/DIvkov575/dima-skills",
-      "keywords": ["status", "progress", "todo", "notes", "report"]
     },
     {
       "name": "shrink",

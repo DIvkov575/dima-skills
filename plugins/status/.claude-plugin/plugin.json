@@ -1,5 +1,0 @@
-{
-  "name": "status",
-  "description": "Read session notes, today's work log, and task list to produce a concise status report",
-  "version": "1.0.0"
-}
