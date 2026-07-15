@@ -208,6 +208,20 @@
       },
       "repository": "https://github.com/DIvkov575/dima-skills",
       "keywords": ["echo", "cat", "print", "verbatim", "file", "dump"]
+    },
+    {
+      "name": "orchestrator",
+      "source": {
+        "source": "github",
+        "repo": "DIvkov575/orchestrator"
+      },
+      "description": "Polls expqueue and a c11 workspace's panes, drives idle/waiting sessions, escalates hard decisions, and routes new user instructions into expqueue tasks delivered to c11 sessions",
+      "version": "1.0.0",
+      "author": {
+        "name": "DIvkov575"
+      },
+      "repository": "https://github.com/DIvkov575/orchestrator",
+      "keywords": ["orchestrate", "c11", "expqueue", "fleet", "delegate", "task-queue"]
     }
   ]
 }
