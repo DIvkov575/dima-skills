@@ -208,20 +208,6 @@
       },
       "repository": "https://github.com/DIvkov575/dima-skills",
       "keywords": ["echo", "cat", "print", "verbatim", "file", "dump"]
-    },
-    {
-      "name": "tq",
-      "source": {
-        "source": "github",
-        "repo": "DIvkov575/tq"
-      },
-      "description": "File-backed task queue (Textual TUI + CLI) tightly coupled to a persistent tq-orchestrator skill for driving a shared c11 workspace against it",
-      "version": "1.0.0",
-      "author": {
-        "name": "DIvkov575"
-      },
-      "repository": "https://github.com/DIvkov575/tq",
-      "keywords": ["orchestrate", "c11", "task-queue", "fleet", "delegate"]
     }
   ]
 }
