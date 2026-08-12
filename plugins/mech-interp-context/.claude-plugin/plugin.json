@@ -1,0 +1,5 @@
+{
+  "name": "mech-interp-context",
+  "description": "Load and verify the full local ARENA mechanistic-interpretability context",
+  "version": "1.0.0"
+}

@@ -208,6 +208,17 @@
       },
       "repository": "https://github.com/DIvkov575/dima-skills",
       "keywords": ["echo", "cat", "print", "verbatim", "file", "dump"]
+    },
+    {
+      "name": "mech-interp-context",
+      "source": "./plugins/mech-interp-context",
+      "description": "Load and verify the full local ARENA mechanistic-interpretability context",
+      "version": "1.0.0",
+      "author": {
+        "name": "DIvkov575"
+      },
+      "repository": "https://github.com/DIvkov575/skills",
+      "keywords": ["mechanistic-interpretability", "arena", "transformer-lens", "context"]
     }
   ]
 }

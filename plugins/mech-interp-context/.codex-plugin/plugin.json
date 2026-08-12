@@ -1,0 +1,27 @@
+{
+  "name": "mech-interp-context",
+  "version": "1.0.0",
+  "description": "Load and verify the full local ARENA mechanistic-interpretability context",
+  "author": {
+    "name": "DIvkov575"
+  },
+  "repository": "https://github.com/DIvkov575/skills",
+  "keywords": [
+    "mechanistic-interpretability",
+    "arena",
+    "transformer-lens",
+    "context"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Mech Interp Context",
+    "shortDescription": "Load the full local ARENA context",
+    "longDescription": "Verifies and loads the 650k-token ARENA reference file from the local mech-interp project before mechanistic-interpretability work.",
+    "developerName": "DIvkov575",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read"
+    ],
+    "defaultPrompt": "Use $mech-interp-context to load the full ARENA context before helping with this mechanistic-interpretability task."
+  }
+}

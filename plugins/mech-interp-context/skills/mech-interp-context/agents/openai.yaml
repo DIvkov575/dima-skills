@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mech Interp Context"
+  short_description: "Load the full ARENA mechanistic-interpretability context"
+  default_prompt: "Use $mech-interp-context to load the ARENA context before helping with this mechanistic-interpretability task."
